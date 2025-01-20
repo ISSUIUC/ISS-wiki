@@ -2,7 +2,7 @@ version: "3.2"
 services:
 
   outline:
-    image: docker.getoutline.com/outlinewiki/outline:0.80.2
+    image: docker.getoutline.com/outlinewiki/outline:0.81.1
     env_file: ./docker.env
     ports:
       - "3000:3000"
@@ -53,14 +53,14 @@ services:
       POSTGRES_DB: 'outline'
     restart: always
 
-  nginx:
-    image: nginx:latest
-    container_name: production_nginx
-    volumes:
-      - nginx-config:/etc/nginx/sites-enabled/default
-    ports:
-      - 8080:8080
-      - 443:443
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: production_nginx
+  #   volumes:
+  #     - nginx-config:/etc/nginx/sites-enabled/default
+  #   ports:
+  #     - 8080:8080
+  #     - 443:443
 
 volumes:
   storage-data:
